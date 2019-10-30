@@ -1,0 +1,71 @@
+/* Styles the navbar */
+.navBar {
+	overflow: hidden;
+	background-color: #228b22;
+	border-radius: 5px;
+}
+
+/* Styles the navbar links */
+.navBar a {
+	float: left;
+	display: block;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 16px;
+	font-family: Verdana;
+}
+
+/* Styles links on mouse-over */
+.navBar a:hover {
+	background-color: #31AF42;
+	color: black;
+}
+
+/* Styles the active link */
+.navBar a.active {
+	background-color: #00A542;
+	color: white;
+}
+
+/* Styles the login container */
+.navBar .login-container {
+	float: right;
+}
+
+/* Styles the input field inside the navbar*/
+.navBar input[type=text] {
+	padding: 6px;
+	margin-top: 8px;
+	font-size: 16px;
+	border: none;
+	width: 150px;
+}
+
+/* Styles the button inside the login container */
+.navBar .login-container button {
+	float: right;
+	padding: 6px;
+	margin-top: 8px;
+	margin-right: 16px;
+	background: #bbb;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+}
+
+.navBar .login-container button:hover {
+	background: #ccc;
+}
+
+img {
+	height: 150px;
+	width: 200px;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

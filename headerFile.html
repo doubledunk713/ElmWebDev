@@ -5,22 +5,29 @@
 	<meta charset="UTF-8">
 	<meta name="author" content="Web Dev Team">
 	<meta name="robots" content="noindex, nofollow">
+	<link rel="stylesheet" href="headerCSS.css">
 	
-	<img src="centuryElmImage.png" alt="Century Elm Supper Club">
-	
-	<a href="home.html">Home</a>
-	<a href="menu.html">Menu</a>
-	<a href="events.html">Events</a>
-	<a href="gallery.html">Gallery</a>
-	<a href="contact.html">Contact</a>
-	
-	<div id="loginDiv">
-		<form action="login.php" method="POST">
-			<label for="username">Username:</label>
-			<input type="text" name="username" id="username" placeholder="">
-			
-			<label for="password">Password:</label>
-			<input type="text" name="password" id="password" placeholder="">
-		</form>
-	</div>
+	<title> Century Elm Country Club </title>
 </head>
+
+<header>
+	<img src="centuryElmImage.png" alt="Century Elm Supper Club" class="center">
+	
+	<div class="navBar">
+		<a class="active" href="home.html">Home</a>
+		<a href="menu.html">Menu</a>
+		<a href="events.html">Events</a>
+		<a href="gallery.html">Gallery</a>
+		<a href="contact.html">Contact</a>
+		<div class="login-container">
+			<form action="login.php" method="POST">
+				<input type="text" placeholder="Username" name="username">
+				<input type="text" placeholder="Password" name="psw">
+				<button type="submit">Login</button>
+			</form>
+		</div>
+	</div>
+</header>
+
+
+
