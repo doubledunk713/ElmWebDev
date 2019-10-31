@@ -1,0 +1,33 @@
+.row {
+  display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.colLeft {
+  flex: 50%;
+  text-align: center;
+  float: right;
+}
+.colRight{
+  flex: 50%;
+}
+iframe{
+
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+
+}
+.list{
+
+  display: inline-block;
+  text-align:left;
+  font-size: 24px;
+
+}
+h1{
+
+    text-align: center;
+    font-size: 40px;
+
+}
