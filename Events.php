@@ -10,6 +10,7 @@
 <body>
 	<h1>Events Calendar</h1>
 	<p>Check this calendar for upcoming events and specials. For more details <a href="Contact.php">Contacts</a> </p>
+	We plan to put a calendar below...
 	<!--Thinking about making a calendar filled
  	with events here-->
 	<a href="http://validator.w3.org/check/referer">Validate Me</a>
