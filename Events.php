@@ -12,7 +12,7 @@
 	<p>Check this calendar for upcoming events and specials. For more details <a href="Contact.php">Contacts</a> </p>
 	<!--Thinking about making a calendar filled
  	with events here-->
-	<a href=""></a>
+	<a href="http://validator.w3.org/check/referer">Validate Me</a>
 </body>
 	<?php include 'headerFile.html'; ?>
 </html>
