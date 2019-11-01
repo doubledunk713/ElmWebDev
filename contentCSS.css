@@ -1,0 +1,17 @@
+/*
+    Created on : Oct 30, 2019, 8:46:54 PM
+    Author     : The Elm Dev
+*/
+
+h1, h2 {
+    font-family: Book Antiqua;
+    font-style: italic;
+}
+
+h2 {
+    font-style: normal;
+}
+
+p.content {
+    
+}
