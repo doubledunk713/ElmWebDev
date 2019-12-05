@@ -16,7 +16,7 @@ input[type=submit] {
 input[type=submit]:hover{
    background-color: pink;
 }
-input[type=text], input[type=search], select {
+input[type=text], input[type=search],input[type=password], input[type=email], select {
    width: 350px;
    padding: 8px;
    margin-top: 4px;
@@ -47,13 +47,15 @@ input[type=text], input[type=search], select {
   text-align: center;
 }
 ul{
-  list-style-type: square;
+
+  list-style-type: none;
+
 
 }
-h1{
+h1, h2{
   text-align: center;
-
 }
+
 body{
 
   background: white;
@@ -72,4 +74,40 @@ fieldset{
 }
 input[type=text]:focus {
    background-color: lightgrey;
+}
+.valid {
+  color: green;
+}
+.valid:before {
+  position: relative;
+  left: -35px;
+
+  content: "✔";
+
+}
+.invalid{
+  color: red;
+}
+.invalid:before {
+  position: relative;
+  left: -35px;
+
+  content: "✖";
+
+}
+
+#message {
+  background: white;
+  color: #000;
+
+  position: relative;
+
+  padding: 20px;
+  margin-top: 10px;
+
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
 }
