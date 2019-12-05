@@ -1,5 +1,5 @@
 <?php
-	
+    include("sessionHandling.php");
 	/*
 	//get into database and get events
 	include("db.php");

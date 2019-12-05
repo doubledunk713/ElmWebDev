@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<?php error_reporting(E_ALL | E_STRICT) ?>
+<?php error_reporting(E_ALL | E_STRICT);
+    include("sessionHandling.php");
+?>
 <!--
     gallery.php
     2019-12-03

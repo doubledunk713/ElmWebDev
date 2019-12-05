@@ -1,6 +1,7 @@
 <?php
 include("db.php");
 include("queries.php");
+include("sessionHandling.php");
 $uniqueUser = true;
 $success = false;
 $uniqueEmail = true;
@@ -69,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 </head>
 
 <body>
-    <?php include 'headerFile.html'; ?>
+    <?php include 'headerFile.php'; ?>
 
     <form method="post" action="register.php">
         <div class="page">
