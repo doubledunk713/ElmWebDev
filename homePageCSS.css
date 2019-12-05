@@ -1,0 +1,14 @@
+p.historyParagraph {
+	font-size: 18px;
+}
+
+h1 {
+	text-align: center;
+	margin: auto;
+	padding: 10px;
+}
+
+p#famLine {
+	font-weight: bold;
+	font-size: 22px;
+}
