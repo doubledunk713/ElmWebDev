@@ -90,7 +90,7 @@
 
 	
 	function validatePassword($username, $password) {
-		$validPass = false;
+		$correctPass = false;
 		try {
 			$dbh = db_connect();
 			$sql = "SELECT password FROM Users WHERE username = ?";
@@ -105,8 +105,10 @@
 					$correctPass = $correctPassword === crypt($password, $correctPassword);
 				}
 			}
+
+			return $correctPass;
 		} catch(PDOException $e) {
-			?> <p> Issue checking password </p> <?php
+			?> <p> Issue validating password </p> <?php
                 db_disconnect();
                 exit();
 		}

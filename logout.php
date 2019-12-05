@@ -1,6 +1,6 @@
 <?php
     require_once("sessionHandling.php");
-    require_once ("database.php");
+    require_once ("db.php");
 
     unset($_SESSION["username"]);
     session_destroy();

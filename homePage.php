@@ -6,9 +6,10 @@
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
 		$username = $_POST["username"];
 		$password = $_POST["psw"];
-		
+		echo "sup";
 		$isPasswordValid = validatePassword($username, $password);
 		if($isPasswordValid) {
+		    echo "sup2";
 			$_SESSION["username"] = $username;
 			redirect("homePage.php", "Login Successful!");
 		}
@@ -23,10 +24,10 @@
 	<meta name="robots" content="noindex, nofollow">
 	<link rel="stylesheet" href="homePageCSS.css">
 	<link rel="stylesheet" href="headerCSS.css">
-	<?php include 'headerFile.php' ?>
 </head>
 
 <body>
+    <?php include 'headerFile.php' ?>
 	<h1>About Us</h1>
 	
 	<p class="historyParagraph">Century Elm Supper club is proudly owned and operated by Betsy and her

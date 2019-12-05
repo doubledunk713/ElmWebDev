@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<?php error_reporting(E_ALL | E_STRICT) ?>
+<?php error_reporting(E_ALL | E_STRICT);
+include("sessionHandling.php");
+?>
 <!--
     menu.php
     2019-10-30

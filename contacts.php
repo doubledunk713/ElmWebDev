@@ -1,3 +1,4 @@
+<?php include("sessionHandling.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
