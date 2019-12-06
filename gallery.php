@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<?php error_reporting(E_ALL | E_STRICT);
-    include("sessionHandling.php");
+<?php
+error_reporting(E_ALL | E_STRICT);
+include("sessionHandling.php");
+
 ?>
 <!--
     gallery.php
@@ -26,7 +28,11 @@
     <body>
         <?php include './headerFile.php'; ?>
         <?php
-        $dir = "./img/";
+		if(isset($_SESSION["flash"])) {
+			?> <p id="successfulUpload"><?= $_SESSION["flash"] ?></p> <?php 
+			$_SESSION["flash"] = null;
+		}
+        $dir = "./uploads/";
         $images = glob($dir . "*.jpg");
         $num = 0;
         ?>
@@ -42,14 +48,24 @@
             }
             ?>
         </div>
-    <?php
+        <?php
 
-    function print_r2($val) {
-        echo '<pre>';
-        print_r($val);
-        echo '</pre>';
-    }
-    ?>
-    <?php include './footerFile.html'; ?>
-</body>
+        function print_r2($val) {
+            echo '<pre>';
+            print_r($val);
+            echo '</pre>';
+        }
+
+        if (isset($_SESSION["status"])) {
+            if ($_SESSION["status"] >= 1) {
+                ?> <p>Upload a new image</p>
+                <form method="POST" action="file_upload.php" enctype="multipart/form-data"> 
+					File? <input type="file" name="fileToUpload"><br>
+					<input type="submit" value="Submit">
+				</form><?php
+            }
+        }
+        ?>
+        <?php include './footerFile.html'; ?>
+    </body>
 </html>
