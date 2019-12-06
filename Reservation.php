@@ -1,9 +1,12 @@
 <?php
-	//include("db.php");
 	include("queries.php");
 	include("sessionHandling.php");
 	//database stuff here
 	
+	if(!isset($_SESSION["username"])) {
+		redirect("homePage.php", "You need to be logged in to view that page!");
+	}
+
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
 		$myData = [];
 		$myData["First"] = htmlspecialchars($_POST["First"]);
@@ -27,15 +30,22 @@
 	<meta charset="utf-8">
 	<meta name="Century Elm Dev" content="WebDevProject">
 	<meta name="robots" content="noindex, nofollow">
-	<?php include 'headerFile.php'; ?>
+    <link rel="stylesheet" href="headerCSS.css">
 	<link rel="stylesheet" type="text/css" href="reservation.css">
 	<link rel="stylesheet" href="footerCSS.css">
-	<link rel="stylesheet" href="headerCSS.css">
 	<Title>Centuryelm</Title>
 </head>
 <body>
+    <?php include 'headerFile.php'; ?>
 	<h1>Reservation</h1>
 	<!-- This section is the title -->
+
+    <?php
+        if($_SESSION["status"] >= 1) { ?>
+            <a href="reservationTable.php">Click Here to See All Reservations</a> <?php
+        }
+
+    ?>
 
 	<!-- This section contains users input -->
 	<h2 id="guide">Please fill the form below accurately to enable us to serve you better!</h2>

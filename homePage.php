@@ -2,16 +2,20 @@
 	include("sessionHandling.php");
 	include("queries.php");
 
-	$isPasswordValid = false;
+	$isPasswordValid = true;
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
 		$username = $_POST["username"];
 		$password = $_POST["psw"];
-		echo "sup";
 		$isPasswordValid = validatePassword($username, $password);
+		
 		if($isPasswordValid) {
-		    echo "sup2";
+			$status = getPrivilegeLevel($username);
 			$_SESSION["username"] = $username;
-			redirect("homePage.php", "Login Successful!");
+			$_SESSION["status"] = $status;
+			
+			redirect("homePage.php");
+		} else {
+			redirect("homePage.php", "Password is invalid!");
 		}
 	}
 ?>
@@ -27,7 +31,12 @@
 </head>
 
 <body>
-    <?php include 'headerFile.php' ?>
+    <?php include 'headerFile.php';
+		if(isset($_SESSION["flash"])) { ?>
+			<p id="invalid"><?= $_SESSION["flash"]; ?></p> <?php
+			$_SESSION["flash"] = null;
+		}
+	?>
 	<h1>About Us</h1>
 	
 	<p class="historyParagraph">Century Elm Supper club is proudly owned and operated by Betsy and her
