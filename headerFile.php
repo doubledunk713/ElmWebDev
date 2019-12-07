@@ -9,13 +9,13 @@
     <a href="newContacts.php">Contact</a>
     <a href="register.php">Register</a>
     <a href="javascript:void(0);" class="icon">
-        <i class="fooBar">&#8801</i>
+        <i class="fooBar">&#8801;</i>
     </a>
     <div class="login-container">
         <?php if (isset($_SESSION["username"])) {
-            ?> <p>Welcome, <?= $_SESSION["username"]; ?></p>
-            <form id="logout" action="logout.php">
-                <input type="submit" value="Logout">
+            ?><form id="logout" action="logout.php">
+                <label id="loggedIn">Welcome, <?= $_SESSION["username"]; ?>!</label>
+                 <button type="submit" value="Logout" class="logout">Logout</button>
             </form>
         <?php } else { ?>
             <form action="homePage.php" method="POST">

@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     <link rel="stylesheet" type="text/css" href="footerCSS.css">
     <link rel="stylesheet" type="text/css" href="headerCSS.css">
     <meta name=“robots” content=“noindex,nofollow”>
-      <script src="register.js"></script>
+    <script src="register.js"></script>
     <title>Centuryelm</title>
 
 
