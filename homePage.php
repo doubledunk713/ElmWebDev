@@ -26,8 +26,9 @@
 	<meta charset="UTF-8">
 	<meta name="author" content="Web Dev Team">
 	<meta name="robots" content="noindex, nofollow">
-	<link rel="stylesheet" href="homePageCSS.css">
 	<link rel="stylesheet" href="headerCSS.css">
+    <link rel="stylesheet" href="footerCSS.css">
+    <link rel="stylesheet" href="homePageCSS.css">
 </head>
 
 <body>
@@ -50,8 +51,7 @@
 	wished she could share this with her grandparents and her uncle, but knows they
 	guide her along the way. We hope you enjoy your visit and your food here.</p>
 	
-	<p id="famLine">We want you to feel like family as well!</p>	
-	
-	
+	<p id="famLine">We want you to feel like family as well!</p>
+
+    <?php include 'footerFile.html' ?>
 </body>
-<?php include 'footerFile.html' ?>
