@@ -9,7 +9,7 @@
     <a href="newContacts.php">Contact</a>
     <a href="register.php">Register</a>
     <a href="javascript:void(0);" class="icon">
-        <i class="fooBar"></i>
+        <i class="fooBar">&#8801</i>
     </a>
     <div class="login-container">
         <?php if (isset($_SESSION["username"])) {
