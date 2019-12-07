@@ -2,16 +2,20 @@
 	include("sessionHandling.php");
 	include("queries.php");
 
-	$isPasswordValid = false;
+	$isPasswordValid = true;
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
 		$username = $_POST["username"];
 		$password = $_POST["psw"];
-		echo "sup";
 		$isPasswordValid = validatePassword($username, $password);
+		
 		if($isPasswordValid) {
-		    echo "sup2";
+			$status = getPrivilegeLevel($username);
 			$_SESSION["username"] = $username;
-			redirect("homePage.php", "Login Successful!");
+			$_SESSION["status"] = $status;
+			
+			redirect("homePage.php");
+		} else {
+			redirect("homePage.php", "Password is invalid!");
 		}
 	}
 ?>
@@ -22,12 +26,18 @@
 	<meta charset="UTF-8">
 	<meta name="author" content="Web Dev Team">
 	<meta name="robots" content="noindex, nofollow">
-	<link rel="stylesheet" href="homePageCSS.css">
 	<link rel="stylesheet" href="headerCSS.css">
+    <link rel="stylesheet" href="footerCSS.css">
+    <link rel="stylesheet" href="homePageCSS.css">
 </head>
 
 <body>
-    <?php include 'headerFile.php' ?>
+    <?php include 'headerFile.php';
+		if(isset($_SESSION["flash"])) { ?>
+			<p id="invalid"><?= $_SESSION["flash"]; ?></p> <?php
+			$_SESSION["flash"] = null;
+		}
+	?>
 	<h1>About Us</h1>
 	
 	<p class="historyParagraph">Century Elm Supper club is proudly owned and operated by Betsy and her
@@ -41,8 +51,7 @@
 	wished she could share this with her grandparents and her uncle, but knows they
 	guide her along the way. We hope you enjoy your visit and your food here.</p>
 	
-	<p id="famLine">We want you to feel like family as well!</p>	
-	
-	
+	<p id="famLine">We want you to feel like family as well!</p>
+
+    <?php include 'footerFile.html' ?>
 </body>
-<?php include 'footerFile.html' ?>

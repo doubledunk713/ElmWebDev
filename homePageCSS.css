@@ -1,5 +1,6 @@
 p.historyParagraph {
 	font-size: 18px;
+	text-align: center;
 }
 
 h1 {
@@ -9,6 +10,14 @@ h1 {
 }
 
 p#famLine {
+	font-weight: bold;
+	font-size: 22px;
+	text-align: center;
+}
+
+p#invalid {
+	text-align: right;
+	color: red;
 	font-weight: bold;
 	font-size: 22px;
 }

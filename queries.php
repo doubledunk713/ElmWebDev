@@ -45,7 +45,7 @@
 
       }
 
-      function uniqueEmail($email){
+    function uniqueEmail($email){
 
           try{
             $dbh = db_connect();
@@ -70,7 +70,7 @@
 
         }
 
-      function insertUser($username, $password, $email, $name, $status){
+    function insertUser($username, $password, $email, $name, $status){
 
         try{
                   $dbh = db_connect();
@@ -87,7 +87,6 @@
            }
 
       }
-
 	
 	function validatePassword($username, $password) {
 		$correctPass = false;
@@ -113,5 +112,72 @@
                 exit();
 		}
 	}
+
+	function getPrivilegeLevel($username) {
+        try {
+            $status = 0;
+            $dbh = db_connect();
+            $sql = "SELECT status FROM Users WHERE username = ?";
+
+            $statement = $dbh->prepare($sql);
+            $params = [$username];
+            $statement->execute($params);
+
+            if($statement) {
+                foreach($statement as $row) {
+                    $status = $row["status"];
+                }
+            }
+
+            return $status;
+        } catch(PDOException $e) {
+            ?> <p> Issue validating password </p> <?php
+            db_disconnect();
+            exit();
+        }
+    }
+	
+	function addEvent($eventName, $description, $day){
+      try{
+        $dbh = db_connect();
+        $sql = "INSERT INTO Events(name, description, date) VALUES(?, ?, ?)";
+        $statement = $dbh->prepare($sql);
+        $param = [$eventName, $description, $day];
+        $statement->execute($param);
+        return true;
+      } catch(PDOException $e){
+        echo $e;
+        db_disconnect();
+        exit();
+      }
+    }
+
+    function getEvents(){
+      try{
+        $dbh = db_connect();
+        $sql = "SELECT * FROM Events";
+        $statement = $dbh->query($sql);
+        return $statement;
+      } catch(PDOException $e){
+        echo $e;
+        db_disconnect();
+        exit();
+      }
+    }
+
+	function getAllReservations() {
+        try {
+            $dbh = db_connect();
+            $sql = "SELECT * FROM Reservation";
+
+            $returnMe = $dbh->query($sql);
+
+            return $returnMe;
+        } catch(PDOException $e){
+            ?> <p> Error getting reservations from database. </p> <?php
+            db_disconnect();
+            exit();
+        }
+    }
 	
 ?>

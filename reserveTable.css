@@ -1,0 +1,13 @@
+table {
+    border: 1px solid black;
+    width: auto;
+    margin: 10px;
+}
+
+tr, td {
+    border: 2px solid green;
+}
+
+#headerRow {
+    background-color: #4bb47b;
+}
