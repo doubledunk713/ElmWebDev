@@ -19,8 +19,8 @@
             </form>
         <?php } else { ?>
             <form action="homePage.php" method="POST">
-                <input type="text" placeholder="Username" name="username">
-                <input type="password" placeholder="Password" name="psw">
+                <input type="text" placeholder="Username" name="username" class="inputBars">
+                <input type="password" placeholder="Password" name="psw" class="inputBars">
                 <button type="submit">Login</button>
             <?php } ?>
         </form>

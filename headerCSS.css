@@ -68,7 +68,7 @@ clicks on the icon. This class makes the topnav look good on small screens
 }
 
 /* Styles the input field inside the navbar*/
-.navBar input[type=text] {
+.navBar input[type=text] input[type=password] {
     padding: 6px;
     margin-top: 8px;
     font-size: 16px;
@@ -102,3 +102,4 @@ img.center {
     margin-left: auto;
     margin-right: auto;
 }
+
