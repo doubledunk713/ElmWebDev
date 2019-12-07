@@ -136,6 +136,34 @@
             exit();
         }
     }
+	
+	function addEvent($eventName, $description, $day){
+      try{
+        $dbh = db_connect();
+        $sql = "INSERT INTO Events(name, description, date) VALUES(?, ?, ?)";
+        $statement = $dbh->prepare($sql);
+        $param = [$eventName, $description, $day];
+        $statement->execute($param);
+        return true;
+      } catch(PDOException $e){
+        echo $e;
+        db_disconnect();
+        exit();
+      }
+    }
+
+    function getEvents(){
+      try{
+        $dbh = db_connect();
+        $sql = "SELECT * FROM Events";
+        $statement = $dbh->query($sql);
+        return $statement;
+      } catch(PDOException $e){
+        echo $e;
+        db_disconnect();
+        exit();
+      }
+    }
 
 	function getAllReservations() {
         try {
