@@ -1,0 +1,113 @@
+.row {
+  display: flex;
+}
+
+input[type=submit] {
+   width: 200px;
+   background-color: #228b22;
+   color: black;
+   padding: 15px;
+   margin: 10px 0;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 20px;
+}
+input[type=submit]:hover{
+   background-color: pink;
+}
+input[type=text], input[type=search],input[type=password], input[type=email], select {
+   width: 350px;
+   padding: 8px;
+   margin-top: 4px;
+   margin-bottom: 12px;
+   border: 2px solid #228b22;
+   border-radius: 6px;
+   box-sizing: border-box;
+   background-color: #f1f1f1;
+}
+.colLeft {
+  text-align: left;
+  float: right;
+  flex: 50%;
+}
+.colRight {
+  display: inline-block;
+  text-align: left;
+  flex: 50%;
+}
+.page{
+
+  max-width: 750px;
+  margin: auto;
+  background: white;
+  padding: 10px;
+}
+#sub{
+  text-align: center;
+}
+ul{
+
+  list-style-type: none;
+
+
+}
+h1, h2{
+  text-align: center;
+}
+
+body{
+
+  background: white;
+}
+fieldset{
+
+  border: 2px solid black;
+}
+.profile{
+
+	 margin-left: auto;
+	 margin-right: auto;
+   display: block;
+   height: 250px;
+   width: 250px;
+}
+input[type=text]:focus {
+   background-color: lightgrey;
+}
+.valid {
+  color: green;
+}
+.valid:before {
+  position: relative;
+  left: -35px;
+
+  content: "✔";
+
+}
+.invalid{
+  color: red;
+}
+.invalid:before {
+  position: relative;
+  left: -35px;
+
+  content: "✖";
+
+}
+
+#message {
+  background: white;
+  color: #000;
+
+  position: relative;
+
+  padding: 20px;
+  margin-top: 10px;
+
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
