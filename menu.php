@@ -18,9 +18,7 @@ include("sessionHandling.php");
         <meta name="keywords" content="century elm, supper, club, supper club, 
               restaruant, food">
         <meta name="robots" content="noindex, nofollow" />
-        <link rel="stylesheet" href="contentCSS.css">
-        <link rel="stylesheet" href="headerCSS.css">
-        <link rel="stylesheet" href="footerCSS.css">
+        <link rel="stylesheet" href="siteCSS.css">
         <title>Century Elm Supper Club | Menu</title>
     </head>
     <body>
